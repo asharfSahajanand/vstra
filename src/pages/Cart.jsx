@@ -1,18 +1,34 @@
 import { useState } from "react";
-import Navbar from "../Navbar";
-import Footer from "../Footer";
+import Navbar from "../components/Navbar.jsx";
+import Footer from "../components/Footer.jsx";
 import { useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 
 
 export default function Cart() {
-  const [quantity, setQuantity] = useState(1);
-  const price = 299;
 
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const cartItem = location.state?.product;
+  const initialQuantity = location.state?.quantity || 1;
+
+  const [quantity, setQuantity] = useState(initialQuantity);
+
+ 
+  if (!cartItem) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <h2 className="text-2xl font-semibold">Your cart is empty.</h2>
+      </div>
+    );
+  }
+
+  const price = Number(cartItem.price);
   const subtotal = price * quantity;
   const discount = 0;
   const total = subtotal - discount;
-  const navigate = useNavigate();
 
   return (
     <div className="min-h-screen bg-gray-100">
@@ -31,8 +47,8 @@ export default function Cart() {
 
               <div className="flex items-center space-x-4">
                 <img
-                  src="https://picsum.photos/200/200?random=1"
-                  alt="Product"
+                  src={cartItem.img1}
+                  alt={cartItem.title}
                   className="w-20 h-20 rounded-md object-cover"
                 />
                 <div>
@@ -106,7 +122,15 @@ export default function Cart() {
           {/* CHECKOUT BUTTON */}
           <div className="flex justify-center">
           <button
-  onClick={() => navigate("/checkout")}
+ onClick={() =>
+  navigate("/checkout", {
+    state: {
+    cartItem,
+      quantity,
+      price
+    },
+  })
+}
   className="bg-indigo-600 text-white py-3 px-8 rounded-full font-semibold hover:bg-indigo-700 transition shadow-md"
 >
   Proceed to Checkout

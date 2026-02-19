@@ -1,11 +1,16 @@
 import { useState } from "react";
-import Navbar from "../Navbar";
-import Footer from "../Footer";
+import Navbar from "../components/Navbar.jsx";
+import Footer from "../components/Footer.jsx";
 import { useNavigate } from "react-router-dom";
-
+import { useLocation } from "react-router-dom";
 export default function Checkout() {
   const navigate = useNavigate();
+ const location = useLocation();;
 
+  const cartItem = location.state?.cartItem;
+  const initialQuantity = location.state?.quantity || 1;
+
+  const [quantity, setQuantity] = useState(initialQuantity);
   const [step, setStep] = useState(1);
 
   const [formData, setFormData] = useState({
@@ -20,11 +25,19 @@ export default function Checkout() {
     email: "",
   });
 
-  const price = 299;
-  const quantity = 1;
+if (!cartItem) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <h2 className="text-2xl font-semibold">Your cart is empty.</h2>
+      </div>
+    );
+  }
+
+  const price = Number(cartItem.price);
   const subtotal = price * quantity;
-  const shipping = 0;
-  const total = subtotal + shipping;
+  const discount = 0;
+  const total = subtotal - discount;
+  const shipping = 50; // flat ₹50 shipping
 
   const handleChange = (e) => {
     setFormData({
@@ -39,7 +52,7 @@ export default function Checkout() {
     if (step < 9) {
       setStep(step + 1);
     } else {
-      navigate("/order-success");
+      navigate("/confirm/thankyou");
     }
   };
 
@@ -58,8 +71,9 @@ export default function Checkout() {
 
             <div className="flex items-center space-x-4 mb-6">
               <img
-                src="https://picsum.photos/200/200?random=1"
-                alt="Product"
+                src={cartItem.img1}
+                alt={cartItem.title}
+           
                 className="w-24 h-24 rounded-md object-cover"
               />
               <div>
@@ -188,14 +202,7 @@ export default function Checkout() {
               {/* STEP 9 - CONFIRMATION */}
               {step === 9 && (
                 <div className="bg-gray-50 p-6 rounded-lg border border-gray-200 space-y-2 text-sm">
-                  <p><strong>Name:</strong> {formData.fullName}</p>
-                  <p><strong>Address:</strong> {formData.address1} {formData.address2}</p>
-                  <p><strong>City:</strong> {formData.city}</p>
-                  <p><strong>State:</strong> {formData.state}</p>
-                  <p><strong>Pincode:</strong> {formData.pincode}</p>
-                  <p><strong>Country:</strong> {formData.country}</p>
-                  <p><strong>Phone:</strong> {formData.phone}</p>
-                  <p><strong>Email:</strong> {formData.email}</p>
+                  <p>One ads will be here</p>
                 </div>
               )}
 
@@ -209,6 +216,8 @@ export default function Checkout() {
             </form>
 
             {/* NOTE BLOCK */}
+
+            {step !== 9 && (
             <div className="mt-6 bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded-md shadow-sm">
   <p className="text-sm text-gray-700 leading-relaxed">
     Please ensure that the information you provide is accurate and complete.
@@ -221,6 +230,7 @@ export default function Checkout() {
     experience. Thank you for choosing us!
   </p>
 </div>
+)}
 </div>
 
         </section>

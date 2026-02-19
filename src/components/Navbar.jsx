@@ -14,19 +14,17 @@ export default function Navbar() {
             href="/"
             className="text-2xl md:text-3xl font-bold text-gray-800 tracking-tight"
           >
-            Pagalworlid
+            vastra
           </a>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
             <a href="/" className="nav-link">Home</a>
             <a href="/FAQ" className="nav-link">FAQ</a>
-            <a href="/about" className="nav-link">About</a>
-            <a href="/contact" className="nav-link">Contact</a>
+            <a href="/about-us" className="nav-link">About</a>
+            <a href="/contact-us" className="nav-link">Contact</a>
             <a href="/policy" className="nav-link">Policy</a>
-            <a href="/return-refund" className="nav-link">Return & Refund</a>
-            <a href="/shipping-policy" className="nav-link">Shipping Policy</a>
-            <a href="/terms-and-conditions" className="nav-link">Terms & Conditions</a>
+      
           </nav>
 
           {/* Cart + Mobile Button */}
@@ -96,11 +94,8 @@ export default function Navbar() {
           <a href="/" className="mobile-link">Home</a>
           <a href="/faq" className="mobile-link">FAQ</a>
           <a href="/about" className="mobile-link">About Us</a>
-          <a href="/contact" className="mobile-link">Contact Us</a>
+          <a href="/contact-us" className="mobile-link">Contact Us</a>
           <a href="/policy" className="mobile-link">Policy</a>
-          <a href="/return-refund" className="mobile-link">Return Policy</a>
-          <a href="/shipping-policy" className="mobile-link">Shipping Policy</a>
-          <a href="/terms-and-conditions" className="mobile-link">Terms & Conditions</a>
         </nav>
       </aside>
 

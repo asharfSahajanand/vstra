@@ -1,5 +1,5 @@
-import Navbar from "../Navbar.jsx";
-import Footer from "../Footer.jsx";
+import Navbar from "../components/Navbar.jsx";
+import Footer from "../components/Footer.jsx";
 
 export default function PrivacyPolicy() {
   return (
@@ -9,216 +9,105 @@ export default function PrivacyPolicy() {
       <main className="flex-1">
         <section className="container mx-auto px-4 sm:px-6 md:px-12 py-16 md:py-24">
           <div className="max-w-4xl mx-auto bg-white rounded-xl shadow-lg p-6 md:p-12">
-            
-            <h1 className="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-8">
-              Privacy Policy
-            </h1>
+
+            <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-8">
+              Privacy Policiy
+            </h2>
 
             <div className="space-y-8 text-gray-600 leading-relaxed">
 
-              <div>
-                <p className="mb-4">
-                  At Pagalworlid, we respect your privacy and are committed to protecting the personal information you share with us. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit or make a purchase from our website.
-                </p>
-                <p>
-                  By accessing or using our website, you agree to the terms of this Privacy Policy.
-                </p>
-              </div>
-
-              <div>
-                <h2 className="text-xl font-bold text-gray-800 mb-3">
-                  1. Business Information
-                </h2>
-                <p className="mb-3">This website is operated by:</p>
-
-                <div className="bg-gray-50 p-5 rounded-lg border border-gray-100 text-sm">
-                  <p className="mb-2">
-                    <strong>Legal Business Name:</strong><br />
-                    BAKULBHAI DURLABHBHAI DOMADIYA HUF
-                  </p>
-                  <p className="mb-2">
-                    <strong>Business Nature:</strong><br />
-                    Clothing & Fashion E-commerce
-                  </p>
-                  <p className="mb-2">
-                    <strong>GST Number:</strong><br />
-                    24AAHHB0806L1ZL
-                  </p>
-                  <p>
-                    <strong>Registered Address:</strong><br />
-                    410, Canopus Mall, Ghod Dod Road, Surat, Gujarat – 395007, India
-                  </p>
-                </div>
-              </div>
-
-              <div>
-                <h2 className="text-xl font-bold text-gray-800 mb-3">
-                  2. Information We Collect
-                </h2>
-                <p className="mb-3">
-                  We may collect the following types of information:
-                </p>
-
-                <div className="ml-4 space-y-4">
-
-                  <div>
-                    <h3 className="font-semibold text-gray-700">
-                      a) Personal Information
-                    </h3>
-                    <ul className="list-disc pl-5 mt-1 space-y-1">
-                      <li>Name</li>
-                      <li>Phone number</li>
-                      <li>Email address</li>
-                      <li>Shipping and billing address</li>
-                      <li>
-                        Payment-related details (processed securely via third-party gateways)
-                      </li>
-                    </ul>
-                  </div>
-
-                  <div>
-                    <h3 className="font-semibold text-gray-700">
-                      b) Order Information
-                    </h3>
-                    <ul className="list-disc pl-5 mt-1 space-y-1">
-                      <li>Products purchased</li>
-                      <li>Order ID and transaction details</li>
-                      <li>Delivery and return history</li>
-                    </ul>
-                  </div>
-
-                  <div>
-                    <h3 className="font-semibold text-gray-700">
-                      c) Technical Information
-                    </h3>
-                    <ul className="list-disc pl-5 mt-1 space-y-1">
-                      <li>IP address</li>
-                      <li>Browser type</li>
-                      <li>Device information</li>
-                      <li>Cookies and usage data</li>
-                    </ul>
-                  </div>
-
-                </div>
-              </div>
-
-              <div>
-                <h2 className="text-xl font-bold text-gray-800 mb-3">
-                  3. How We Use Your Information
-                </h2>
-                <p className="mb-2">We use the collected information to:</p>
-                <ul className="list-disc pl-5 space-y-1">
-                  <li>Process and deliver orders</li>
-                  <li>Communicate order updates and support responses</li>
-                  <li>Process payments and refunds</li>
-                  <li>Improve website performance and user experience</li>
-                  <li>Prevent fraud and unauthorized transactions</li>
-                  <li>Comply with legal and regulatory requirements</li>
-                </ul>
-              </div>
-
-              <div>
-                <h2 className="text-xl font-bold text-gray-800 mb-3">
-                  4. Cookies & Tracking Technologies
-                </h2>
-                <p className="mb-2">
-                  Our website uses cookies and similar technologies to:
-                </p>
-                <ul className="list-disc pl-5 space-y-1 mb-2">
-                  <li>Enhance site functionality</li>
-                  <li>Analyze traffic and user behavior</li>
-                  <li>Improve marketing and advertising performance</li>
-                </ul>
-                <p>
-                  You may choose to disable cookies through your browser settings, though some website features may not function properly.
-                </p>
-              </div>
-
-              <div>
-                <h2 className="text-xl font-bold text-gray-800 mb-3">
-                  5. Sharing of Information
-                </h2>
-                <p className="mb-2">
-                  We do not sell or rent your personal information to third parties.
-                </p>
-                <p className="mb-2">
-                  Your information may be shared only with:
-                </p>
-                <ul className="list-disc pl-5 space-y-1 mb-2">
-                  <li>Payment gateway providers</li>
-                  <li>Courier and logistics partners</li>
-                  <li>Technology and analytics service providers</li>
-                  <li>Government or legal authorities when required by law</li>
-                </ul>
-                <p>
-                  All third parties are obligated to protect your information and use it only for intended purposes.
-                </p>
-              </div>
-
-              <div>
-                <h2 className="text-xl font-bold text-gray-800 mb-3">
-                  6. Payment Security
-                </h2>
-                <p>
-                  All payments on Pagalworlid are processed through secure and trusted third-party payment gateways. We do not store your debit/credit card details.
-                </p>
-              </div>
-
-              <div>
-                <h2 className="text-xl font-bold text-gray-800 mb-3">
-                  7. Data Security
-                </h2>
-                <p>
-                  We implement appropriate technical and organizational measures to safeguard your personal information.
-                </p>
-              </div>
-
-              <div>
-                <h2 className="text-xl font-bold text-gray-800 mb-3">
-                  8. Your Rights
-                </h2>
-                <ul className="list-disc pl-5 space-y-1 mb-2">
-                  <li>Access or update your personal information</li>
-                  <li>Request correction of inaccurate data</li>
-                  <li>Request deletion of your information</li>
-                </ul>
-              </div>
-
-              <div>
-                <h2 className="text-xl font-bold text-gray-800 mb-3">
-                  9. Third-Party Links
-                </h2>
-                <p>
-                  Our website may contain links to third-party websites.
-                </p>
-              </div>
-
-              <div>
-                <h2 className="text-xl font-bold text-gray-800 mb-3">
-                  10. Policy Updates
-                </h2>
-                <p>
-                  We may update this Privacy Policy from time to time.
-                </p>
-              </div>
-
-              <div>
-                <h2 className="text-xl font-bold text-gray-800 mb-3">
-                  11. Contact Us
+              <div className="max-w-4xl mx-auto px-6 py-16">
+                {/* RETURN POLICY */}
+                <h2 className="text-2xl font-bold text-gray-800 mb-4">
+                  Privacy Policiy
                 </h2>
 
-                <div className="bg-indigo-50 p-5 rounded-lg border border-indigo-100">
-                  <p className="mb-1">
-                    <strong>📧 Email:</strong> sales@pagalworlid.com
-                  </p>
-                  <p className="mb-1">
-                    <strong>📞 Phone / WhatsApp:</strong> +91 78741 35575
-                  </p>
-                  <p>
-                    <strong>Support Hours:</strong> Monday to Saturday: 10:00 AM – 6:00 PM
-                  </p>
-                </div>
+                <p className="text-gray-600 text-lg leading-relaxed mb-8">
+                  We value your privacy and are committed to protecting your personal information. This policy explains how we collect, use, and protect your data when you visit our website or make a purchase. By using our site, you consent to the data practices described in this policy.
+                </p>
+                {/* RETURN POLICY */}
+                <h3 className="text-xl font-semibold text-gray-700 mb-2">
+                  1.Information We Collect
+                </h3>
+
+                <p className="text-gray-600 text-lg leading-relaxed mb-8">
+                  When you make a purchase or attempt to make a purchase through the Site, we collect certain information from you, including your name, billing address, shipping address, payment information, email address, and phone number. We refer to this information as "Order Information."
+                </p>
+
+                {/* information */}
+                <h3 className="text-xl font-semibold text-gray-700 mb-2">
+                  2.How We Use Your Information
+                </h3>
+
+                <p className="text-gray-600 text-lg leading-relaxed mb-8">
+                  We use the Order Information that we collect generally to fulfill any orders placed through the Site (including processing your payment information, arranging for shipping, and providing you with invoices and/or order confirmations).</p>
+                {/* RETURN POLICY */}
+                <h2 className="text-2xl font-bold text-gray-800 mb-4">
+                  Return Policy
+                </h2>
+
+                <p className="text-gray-600 text-lg leading-relaxed mb-8">
+                  Your satisfaction is our top priority. If you are not completely satisfied with your
+                  purchase, we're here to help. This policy outlines the terms and conditions for returning an item.
+                </p>
+
+                {/* Section 1 */}
+                <h3 className="text-xl font-semibold text-gray-700 mb-2">
+                  1. Eligibility for Returns
+                </h3>
+
+                <p className="text-gray-600 leading-relaxed mb-8">
+                  To be eligible for a return, your item must be unused and in the same condition that you
+                  received it. It must also be in the original packaging. Our return policy lasts 30 days.
+                  If 30 days have gone by since your purchase, unfortunately, we can't offer you a refund or exchange.
+                </p>
+
+                {/* Section 2 */}
+                <h3 className="text-xl font-semibold text-gray-700 mb-2">
+                  2. How to Initiate a Return
+                </h3>
+
+                <p className="text-gray-600 leading-relaxed mb-12">
+                  To initiate a return, please contact our customer support team at
+                  <span className="font-medium text-gray-800"> support@theartisan.shop </span>
+                  with your order number and a brief explanation of the reason for the return.
+                  We will provide you with a return shipping label and instructions on how to send your package.
+                </p>
+
+                {/* TERMS AND CONDITIONS */}
+                <h2 className="text-2xl font-bold text-gray-800 mb-4">
+                  Terms and Conditions
+                </h2>
+
+                <p className="text-gray-600 text-lg leading-relaxed mb-8">
+                  Please read these Terms and Conditions ("Terms") carefully before using the website.
+                  Your access to and use of the website is conditioned on your acceptance of and compliance
+                  with these Terms.
+                </p>
+
+                {/* Intellectual Property */}
+                <h3 className="text-xl font-semibold text-gray-700 mb-2">
+                  1. Intellectual Property
+                </h3>
+
+                <p className="text-gray-600 leading-relaxed mb-8">
+                  The content on this website, including all text, images, and graphics, is the property
+                  of The Artisan's Shop and is protected by intellectual property laws.
+                  You may not use, reproduce, or distribute any content without our express written permission.
+                </p>
+
+                {/* Limitation of Liability */}
+                <h3 className="text-xl font-semibold text-gray-700 mb-2">
+                  2. Limitation of Liability
+                </h3>
+
+                <p className="text-gray-600 leading-relaxed">
+                  In no event shall The Artisan's Shop be liable for any indirect, incidental, special,
+                  or consequential damages arising out of your use of or inability to use the site.
+                </p>
+
               </div>
+
 
             </div>
           </div>

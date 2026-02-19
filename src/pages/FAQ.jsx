@@ -1,5 +1,5 @@
-import Navbar from '../Navbar.jsx';
-import Footer from '../Footer.jsx';
+import Navbar from '../components/Navbar.jsx';
+import Footer from '../components/Footer.jsx';
 
 const sections = [
   {
@@ -80,15 +80,16 @@ export default function FAQ() {
       <Navbar />
 
       <main className="mx-auto w-full max-w-3xl flex-1 px-4 py-10 sm:px-6">
-        <h1 className="text-center text-2xl font-bold text-[#282c3f] sm:text-3xl">
-          Frequently Asked Questions
-        </h1>
+       
 
         <div className="mt-8 overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm">
+           <h1 className="text-center text-2xl font-bold text-[#282c3f] sm:text-3xl">
+          Frequently Asked Questions
+        </h1>
           <div className="p-6 sm:p-8 text-left">
             {sections.map((section, si) => (
               <div key={section.title} className={si > 0 ? 'mt-10' : ''}>
-                <h2 className="text-lg font-bold text-[#282c3f] sm:text-xl">
+                <h2 className="text-2xl font-bold text-gray-800 mb-6">
                   {section.title}
                 </h2>
                 <div className="mt-4 space-y-2">
@@ -98,10 +99,10 @@ export default function FAQ() {
                       className="border-b border-gray-200 last:border-b-0 pb-4 last:pb-0"
                     >
                       <div className="flex w-full items-start justify-between gap-3">
-                        <span className="font-bold text-gray-900">{item.q}</span>
+                        <h3 className="text-lg font-semibold text-gray-800">{item.q}</h3>
                         <ChevronDown />
                       </div>
-                      <p className="mt-2 text-gray-600 leading-relaxed">
+                      <p className="text-gray-600 mt-4 leading-relaxed">
                         {item.a}
                       </p>
                     </div>

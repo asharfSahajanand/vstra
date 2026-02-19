@@ -1,5 +1,11 @@
-import Navbar from "../Navbar.jsx";
-import Footer from "../Footer.jsx";
+import Navbar from "../components/Navbar.jsx";
+import Footer from "../components/Footer.jsx";
+import { Link } from "react-router-dom";
+import {
+  ClockIcon,
+  MapPinIcon,
+  GlobeAltIcon,
+} from "@heroicons/react/24/outline";
 
 export default function About() {
   return (
@@ -9,163 +15,103 @@ export default function About() {
       <main className="flex-1">
         <section className="container mx-auto px-4 sm:px-6 md:px-12 py-16 md:py-24">
           <div className="max-w-4xl mx-auto bg-white rounded-xl shadow-lg p-6 md:p-12">
-            
+
             <h1 className="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-8">
               About Us
             </h1>
 
-            <div className="space-y-8 text-gray-600 leading-relaxed">
+            {/* OUR Story */}
+            <section className="max-w-4xl mx-auto px-6 py-20 text-center">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                Our Story
+              </h2>
 
-              <div>
-                <p className="mb-4">
-                  Pagalworlid.com is owned and operated by BAKULBHAI DURLABHBHAI DOMADIYA HUF, India.
-                </p>
-              </div>
+              <p className="text-gray-600 leading-relaxed text-lg">
+                The Artisan's Shop was founded with a simple mission: to connect people with the stories behind the products they buy. We believe in the power of handmade goods, crafted with passion and purpose. Our journey began in a small workshop, where we saw the beauty and unique character of handcrafted items and felt a desire to share them with the world.
+              </p>
+            </section>
+            {/* OUR MISSION */}
+            <section className="max-w-4xl mx-auto px-6 py-20 text-center">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                Our Mission
+              </h2>
 
-              <div>
-                <h2 className="text-2xl font-bold text-gray-800 mb-4">
-                  Who We Are
-                </h2>
-                <p className="mb-4">
-                  Pagalworlid is operated by a legally registered Indian business entity:
-                </p>
+              <p className="text-gray-600 leading-relaxed text-lg">
+                We are dedicated to supporting independent artisans and preserving traditional crafts.
+                Our mission is to curate a collection of unique, high-quality products that are as
+                meaningful as they are beautiful. By purchasing from us, you're not just buying an item;
+                you're supporting a community of talented creators and helping to keep their craft alive.
+              </p>
+            </section>
+            {/* OUR VALUES */}
+            <section className="max-w-6xl mx-auto px-6 py-16 text-center">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-14">
+                Our Values
+              </h2>
 
-                <div className="bg-gray-50 p-6 rounded-lg border border-gray-100 mb-4">
-                  <p className="mb-2">
-                    <strong>Legal Business Name:</strong><br />
-                    BAKULBHAI DURLABHBHAI DOMADIYA HUF
-                  </p>
-                  <p className="mb-2">
-                    We are engaged in the business of Clothing & Fashion E-commerce, offering a wide range of apparel and fashion products designed to meet the everyday style needs of modern customers.
-                  </p>
-                  <p className="mb-2">
-                    Our operations are conducted in full compliance with Indian business laws and regulations, and we are a GST-registered business.
-                  </p>
-                  <p>
-                    <strong>GST Number:</strong><br />
-                    24AAHHB0806L1ZL
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+
+                {/* VALUE 1 */}
+                <div className="flex flex-col items-center">
+                  {/* <div className="w-16 h-16 flex items-center justify-center rounded-full border-4 border-indigo-500 text-indigo-600 mb-6">
+              ⏰
+            </div> */}
+                  <ClockIcon className="w-16 h-16 text-indigo-600 mb-6" strokeWidth={1.5} />
+                  <h3 className="text-xl font-semibold mb-3">Quality</h3>
+
+                  <p className="text-gray-600 max-w-xs">
+                    We source only the best materials and work with artisans who share
+                    our commitment to craftsmanship.
                   </p>
                 </div>
-              </div>
 
-              <div>
-                <h3 className="text-xl font-bold text-gray-800 mb-3">
-                  Our Registered Address
-                </h3>
-                <p className="mb-2">
-                  BAKULBHAI DURLABHBHAI DOMADIYA HUF<br />
-                  410, Canopus Mall,<br />
-                  Ghod Dod Road,<br />
-                  Surat, Gujarat – 395007<br />
-                  India
-                </p>
-                <p>
-                  This address is our official place of business and is used for all legal, billing, and compliance purposes.
-                </p>
-              </div>
+                {/* VALUE 2 */}
+                <div className="flex flex-col items-center">
+                  {/* <div className="w-16 h-16 flex items-center justify-center rounded-full border-4 border-indigo-500 text-indigo-600 mb-6">
+              📍
+            </div> */}
+                  <MapPinIcon className="w-16 h-16 text-indigo-600 mb-6" strokeWidth={1.5} />
+                  <h3 className="text-xl font-semibold mb-3">Community</h3>
 
-              <div>
-                <h2 className="text-2xl font-bold text-gray-800 mb-4">
-                  Our Vision
-                </h2>
-                <p className="mb-4">
-                  At Pagalworlid, our vision is to make fashionable clothing accessible to everyone without compromising on quality, transparency, or customer trust.
-                </p>
-                <p className="mb-2">
-                  We aim to build long-term relationships with our customers by providing:
-                </p>
-                <ul className="list-disc pl-5 space-y-1">
-                  <li>Genuine products</li>
-                  <li>Clear product information</li>
-                  <li>Fair pricing</li>
-                  <li>Reliable customer support</li>
-                </ul>
-              </div>
+                  <p className="text-gray-600 max-w-xs">
+                    We are proud to support local artisans and foster a community
+                    of creators and conscious consumers.
+                  </p>
+                </div>
 
-              <div>
-                <h2 className="text-2xl font-bold text-gray-800 mb-4">
-                  What We Offer
-                </h2>
-                <p className="mb-2">
-                  We specialize in a wide variety of clothing and fashion products, including:
-                </p>
-                <ul className="list-disc pl-5 space-y-1 mb-4">
-                  <li>Men’s and women’s apparel</li>
-                  <li>Seasonal fashion wear</li>
-                  <li>Jackets, winter wear, and daily wear clothing</li>
-                  <li>Fashion accessories</li>
-                </ul>
-                <p>
-                  All products listed on our website are selected with care to ensure value for money and customer satisfaction.
-                </p>
-              </div>
+                {/* VALUE 3 */}
+                <div className="flex flex-col items-center">
+                  {/* <div className="w-16 h-16 flex items-center justify-center rounded-full border-4 border-indigo-500 text-indigo-600 mb-6">
+              🌍
+            </div> */}
+                  <GlobeAltIcon className="w-16 h-16 text-indigo-600 mb-6" strokeWidth={1.5} />
+                  <h3 className="text-xl font-semibold mb-3">Authenticity</h3>
 
-              <div>
-                <h2 className="text-2xl font-bold text-gray-800 mb-4">
-                  Our Commitment to Transparency
-                </h2>
-                <p className="mb-2">
-                  Transparency and trust are at the core of our business operations.
-                </p>
-                <ul className="list-disc pl-5 space-y-1 mb-4">
-                  <li>Clearly displaying product prices and details</li>
-                  <li>Providing accurate shipping timelines</li>
-                  <li>Offering clear return and refund policy</li>
-                  <li>Ensuring secure payment options</li>
-                </ul>
-                <p>
-                  Our website includes detailed Privacy Policy, Terms & Conditions, Shipping Policy, and Return & Refund Policy.
-                </p>
-              </div>
+                  <p className="text-gray-600 max-w-xs">
+                    Every item is a unique work of art, with a story and a human touch
+                    that mass-produced goods lack.
+                  </p>
+                </div>
 
-              <div>
-                <h2 className="text-2xl font-bold text-gray-800 mb-4">
-                  Customer Support & Service
-                </h2>
-                <ul className="list-disc pl-5 space-y-1 mb-4">
-                  <li>Order inquiries</li>
-                  <li>Shipping updates</li>
-                  <li>Returns and refunds</li>
-                  <li>General product questions</li>
-                </ul>
-                <p>
-                  Please contact us through our Contact Us page for assistance.
-                </p>
               </div>
+            </section>
 
-              <div>
-                <h2 className="text-2xl font-bold text-gray-800 mb-4">
-                  Why Choose Pagalworlid
-                </h2>
-                <ul className="space-y-2 font-medium">
-                  <li>✔ Registered Indian Business</li>
-                  <li>✔ GST Compliant</li>
-                  <li>✔ Transparent policy</li>
-                  <li>✔ Secure Payments</li>
-                  <li>✔ Customer-focused Service</li>
-                </ul>
-              </div>
 
-              <div>
-                <h2 className="text-2xl font-bold text-gray-800 mb-4">
-                  Our Responsibility
-                </h2>
-                <p>
-                  We are committed to ethical business practices and compliance with all applicable laws and guidelines.
-                </p>
-              </div>
+            {/* SHOP SECTION */}
+            <section className="bg-white py-20 text-center ">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                Shop Our Collection
+              </h2>
 
-              <div className="bg-indigo-50 p-6 rounded-lg text-center border border-indigo-100">
-                <h2 className="text-2xl font-bold text-gray-800 mb-2">
-                  Thank You
-                </h2>
-                <p>
-                  Thank you for choosing Pagalworlid.<br />
-                  We value your trust and look forward to serving you.
-                </p>
-              </div>
-
-            </div>
+              <p className="text-gray-600 text-lg mb-10">
+                Explore our curated selection of beautiful, handmade goods.
+              </p>
+              <Link
+                to="/"
+                className="bg-indigo-600 text-white px-10 py-4 rounded-full text-lg font-semibold shadow-lg hover:bg-indigo-700 transition">
+                Shop Now
+              </Link>
+            </section>
           </div>
         </section>
       </main>
