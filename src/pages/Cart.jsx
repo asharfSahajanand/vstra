@@ -65,7 +65,7 @@ export default function Cart() {
 
                 {/* PRICE */}
                 <div className="text-lg font-bold text-gray-900">
-                  ₹{price.toFixed(2)}
+                  Rs. {price.toFixed(2)}
                 </div>
 
                 {/* QUANTITY CONTROLS */}
@@ -98,21 +98,21 @@ export default function Cart() {
               <div className="flex justify-between items-center mb-2">
                 <span className="text-gray-600 font-medium">Subtotal</span>
                 <span className="font-semibold text-gray-800">
-                  ₹{subtotal.toFixed(2)}
+                  Rs. {subtotal.toFixed(2)}
                 </span>
               </div>
 
               <div className="flex justify-between items-center mb-2">
                 <span className="text-gray-600 font-medium">Discount</span>
                 <span className="font-semibold text-red-500">
-                  -₹{discount.toFixed(2)}
+                  Rs. -{discount.toFixed(2)}
                 </span>
               </div>
 
               <div className="flex justify-between items-center border-t border-gray-200 pt-4 mt-4">
                 <span className="text-xl font-bold text-gray-800">Total</span>
                 <span className="text-xl font-bold text-gray-900">
-                  ₹{total.toFixed(2)}
+                  Rs. {total.toFixed(2)}
                 </span>
               </div>
 

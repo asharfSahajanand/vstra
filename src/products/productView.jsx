@@ -1,7 +1,7 @@
 import Navbar from "../components/Navbar.jsx";
 import Footer from "../components/Footer.jsx";
 import { useParams, Link, useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import productsData from "../products/products.json";
 
 export default function ProductDetails() {
@@ -11,6 +11,9 @@ export default function ProductDetails() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [quantity, setQuantity] = useState(1);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [id]);
   const products = productsData; // agar JSON root array hai
   // agar { products: [...] } format hai toh: const products = productsData.products;
 
@@ -93,7 +96,7 @@ export default function ProductDetails() {
             </h1>
 
             <p className="text-2xl md:text-3xl font-semibold text-gray-900 mb-6">
-              Rs. {product.price}  {/* ✅ price */}
+             Rs. {product.price}  {/* ✅ price */}
             </p>
 
             {/* ✅ Dynamic description */}
@@ -172,6 +175,7 @@ export default function ProductDetails() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
             {products.map((item) => (
+           
               <Link to={`/product/${item.id}`} key={item.id}>
                 <div className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition">
                   <img
@@ -184,10 +188,10 @@ export default function ProductDetails() {
                       {item.title}  {/* ✅ title */}
                     </h3>
                     <span className="block text-xl font-bold text-gray-900 mb-4">
-                      Rs. {item.price}  {/* ✅ price */}
+                     Rs. {item.price}  {/* ✅ price */}
                     </span>
                    <Link to={`/product/${item.id}`}>
-                  <button className="mt-4 w-full bg-indigo-600 text-white py-3 rounded-full font-semibold hover:bg-indigo-700 transition">
+                  <button className="inline-block w-full bg-indigo-600 text-white py-2 px-4 rounded-full font-medium hover:bg-indigo-700 transition-colors duration-300">
                     View
                   </button>
                 </Link>

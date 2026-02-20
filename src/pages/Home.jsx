@@ -31,21 +31,21 @@ export default function Home() {
           >
             <img
               src={product.img1}
-              alt={product.name}
+              alt={product.title}
               className="w-full h-72 object-cover"
             />
 
             <div className="p-6 text-center">
               <h3 className="text-lg font-semibold text-gray-800 mb-2">
-                {product.name}
+                {product.title}
               </h3>
 
               <p className="text-xl font-bold mt-2">
-                {product.price}
+                Rs. {product.price}
               </p>
 
               <Link to={`/product/${product.id}`}>
-                <button className="mt-4 w-full bg-indigo-600 text-white py-3 rounded-full font-semibold hover:bg-indigo-700 transition">
+                <button className="inline-block w-full bg-indigo-600 text-white py-2 px-4 rounded-full font-medium hover:bg-indigo-700 transition-colors duration-300">
                   View
                 </button>
               </Link>

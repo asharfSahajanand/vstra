@@ -81,24 +81,24 @@ if (!cartItem) {
                   Premium Winter Jacket Model 1
                 </h3>
                 <p className="text-gray-600">Quantity: {quantity}</p>
-                <p className="text-gray-600">Price: ₹{price}</p>
+                <p className="text-gray-600">Price: Rs. {price}</p>
               </div>
             </div>
 
             <div className="border-t border-gray-200 pt-4">
               <div className="flex justify-between text-lg font-semibold text-gray-800">
                 <span>Subtotal</span>
-                <span>₹{subtotal.toFixed(2)}</span>
+                <span>Rs. {subtotal.toFixed(2)}</span>
               </div>
 
               <div className="flex justify-between text-lg font-semibold text-gray-800">
                 <span>Shipping</span>
-                <span>₹{shipping.toFixed(2)}</span>
+                <span>Rs. {shipping.toFixed(2)}</span>
               </div>
 
               <div className="flex justify-between text-xl font-bold text-gray-900 border-t border-gray-300 mt-4 pt-4">
                 <span>Total</span>
-                <span>₹{total.toFixed(2)}</span>
+                <span>Rs. {total.toFixed(2)}</span>
               </div>
             </div>
           </div>
