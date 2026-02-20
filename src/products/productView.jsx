@@ -51,6 +51,7 @@ export default function ProductDetails() {
             <img
               src={productImages[currentImageIndex]}
               alt={product.title}  // ✅ title
+              loading="lazy"
               className="w-full h-auto object-cover"
             />
 
@@ -181,6 +182,7 @@ export default function ProductDetails() {
                   <img
                     src={item.img1}  // ✅ img1
                     alt={item.title}  // ✅ title
+                     loading="lazy"
                     className="w-full h-48 object-cover"
                   />
                   <div className="p-6 text-center">

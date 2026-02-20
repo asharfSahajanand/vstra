@@ -32,6 +32,7 @@ export default function Home() {
             <img
               src={product.img1}
               alt={product.title}
+              loading="lazy"
               className="w-full h-72 object-cover"
             />
 
