@@ -127,7 +127,7 @@ export default function Contact() {
 
           <div>
             <p className="text-xl font-semibold text-gray-700">Email</p>
-            <p class="text-gray-600">support@theartisan.shop</p>
+            <p class="text-gray-600">support@ecmaly.qubetro.com</p>
           </div>
 
           <div>

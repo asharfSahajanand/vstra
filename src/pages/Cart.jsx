@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar.jsx";
 import Footer from "../components/Footer.jsx";
 import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
+import AdUnit from "../components/Ads/gamAds.jsx";
 
 
 
@@ -32,6 +33,7 @@ export default function Cart() {
 
   return (
     <div className="min-h-screen bg-gray-100">
+      <AdUnit type="d1" />
       <Navbar />
 
       <main>
@@ -118,19 +120,19 @@ export default function Cart() {
 
             </div>
           </div>
-
+<AdUnit type="d2" />
           {/* CHECKOUT BUTTON */}
           <div className="flex justify-center">
           <button
  onClick={() =>
+  showInterstitialAd(() =>
   navigate("/checkout", {
     state: {
     cartItem,
       quantity,
       price
     },
-  })
-}
+}))}
   className="bg-indigo-600 text-white py-3 px-8 rounded-full font-semibold hover:bg-indigo-700 transition shadow-md"
 >
   Proceed to Checkout
@@ -139,7 +141,7 @@ export default function Cart() {
 
         </section>
       </main>
-
+<AdUnit type="d3" />
       <Footer />
     </div>
   );

@@ -1,10 +1,13 @@
 import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar.jsx";
 import Footer from "../components/Footer.jsx";
+import AdUnit from "../components/Ads/gamAds.jsx";
+import { showInterstitialAd } from "../components/Ads/intrstail.jsx";
 
 export default function OrderSuccess() {
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col">
+    <AdUnit type="d1" />
       <Navbar />
 
       <main className="flex-1 flex items-center justify-center px-4 py-16">
@@ -26,6 +29,10 @@ export default function OrderSuccess() {
 
           <Link
             to="/"
+             onClick={(e) => {
+    e.preventDefault(); // Link ko rokta hai
+    showInterstitialAd(() => navigate(`/product/${item.id}`)); // Ad phir navigate
+  }}
             className="inline-block bg-indigo-600 text-white px-8 py-3 rounded-full font-semibold shadow-md hover:bg-indigo-700 transition"
           >
             Continue Shopping

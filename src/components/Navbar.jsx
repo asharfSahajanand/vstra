@@ -14,7 +14,7 @@ export default function Navbar() {
             href="/"
             className="text-2xl md:text-3xl font-bold text-gray-800 tracking-tight"
           >
-            vastra
+          Ecamly
           </a>
 
           {/* Desktop Navigation */}

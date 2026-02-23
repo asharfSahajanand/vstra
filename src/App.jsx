@@ -10,7 +10,9 @@ import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
 import OrderSuccess from "./pages/Confirm.jsx";
 
+
 function App() {
+  
   return (
     <Routes>
       <Route path="/" element={<IndexPage />} />

@@ -3,6 +3,8 @@ import Footer from "../components/Footer.jsx";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import productsData from "../products/products.json";
+import AdUnit from "../components/Ads/gamAds.jsx";
+import { showInterstitialAd } from "../components/Ads/intrstail.jsx";
 
 export default function ProductDetails() {
   const { id } = useParams();
@@ -39,6 +41,7 @@ export default function ProductDetails() {
 
   return (
     <div className="min-h-screen bg-gray-50">
+     <AdUnit type="d1" />
       <Navbar />
 
       <main className="container mx-auto px-4 sm:px-6 md:px-12 py-12 md:py-16">
@@ -134,16 +137,16 @@ export default function ProductDetails() {
                 +
               </button>
             </div>
-
+<AdUnit type="d4" />
             <button
              onClick={() =>
+               showInterstitialAd(() =>
   navigate("/cart", {
     state: {
       product,
       quantity,
     },
-  })
-}
+}))}
 
               className="mt-6 w-full sm:w-auto bg-indigo-600 text-white py-3 px-8 rounded-full font-semibold hover:bg-indigo-700 transition shadow-md"
             >
@@ -167,7 +170,7 @@ export default function ProductDetails() {
 
           </div>
         </div>
-
+<AdUnit type="d2" />
         {/* ALL PRODUCTS SECTION */}
         <section className="mt-20">
           <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12">
@@ -192,7 +195,11 @@ export default function ProductDetails() {
                     <span className="block text-xl font-bold text-gray-900 mb-4">
                      Rs. {item.price}  {/* ✅ price */}
                     </span>
-                   <Link to={`/product/${item.id}`}>
+                   <Link to={`/product/${item.id}`}
+                    onClick={(e) => {
+    e.preventDefault(); // Link ko rokta hai
+    showInterstitialAd(() => navigate(`/product/${item.id}`)); // Ad phir navigate
+  }}>
                   <button className="inline-block w-full bg-indigo-600 text-white py-2 px-4 rounded-full font-medium hover:bg-indigo-700 transition-colors duration-300">
                     View
                   </button>
@@ -205,7 +212,7 @@ export default function ProductDetails() {
         </section>
 
       </main>
-
+<AdUnit type="d3" />
       <Footer />
     </div>
   );

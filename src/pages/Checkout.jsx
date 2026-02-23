@@ -3,6 +3,8 @@ import Navbar from "../components/Navbar.jsx";
 import Footer from "../components/Footer.jsx";
 import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
+import AdUnit from "../components/Ads/gamAds.jsx";
+
 export default function Checkout() {
   const navigate = useNavigate();
  const location = useLocation();;
@@ -58,6 +60,7 @@ if (!cartItem) {
 
   return (
     <div className="min-h-screen bg-gray-100">
+       <AdUnit type="d4" />
       <Navbar />
 
       <main>
@@ -102,7 +105,7 @@ if (!cartItem) {
               </div>
             </div>
           </div>
-
+<AdUnit type="d1" />
           {/* ===== CUSTOMER DETAILS ===== */}
           <div className="max-w-3xl mx-auto bg-white rounded-xl shadow-lg p-6 md:p-8">
             <h2 className="text-2xl font-bold text-gray-800 mb-6">
@@ -202,7 +205,7 @@ if (!cartItem) {
               {/* STEP 9 - CONFIRMATION */}
               {step === 9 && (
                 <div className="bg-gray-50 p-6 rounded-lg border border-gray-200 space-y-2 text-sm">
-                  <p>One ads will be here</p>
+                 <AdUnit type="d1" />
                 </div>
               )}
 
@@ -235,7 +238,7 @@ if (!cartItem) {
 
         </section>
       </main>
-
+<AdUnit type="d3" />
       <Footer />
     </div>
   );

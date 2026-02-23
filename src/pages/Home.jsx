@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import products from "../products/products.json";
+import AdUnit from "../components/Ads/gamAds.jsx";
+import { showInterstitialAd } from "../components/Ads/intrstail.jsx";
 
 const PRODUCTS_PER_PAGE = 10;
 
@@ -45,7 +47,11 @@ export default function Home() {
                 Rs. {product.price}
               </p>
 
-              <Link to={`/product/${product.id}`}>
+              <Link to={`/product/${product.id}`}
+               onClick={(e) => {
+    e.preventDefault(); // Link ko rokta hai
+    showInterstitialAd(() => navigate(`/product/${item.id}`)); // Ad phir navigate
+  }}>
                 <button className="inline-block w-full bg-indigo-600 text-white py-2 px-4 rounded-full font-medium hover:bg-indigo-700 transition-colors duration-300">
                   View
                 </button>
@@ -54,7 +60,7 @@ export default function Home() {
           </div>
         ))}
       </div>
-
+<AdUnit type="d2" />
       {/* PAGINATION */}
       <div className="flex justify-center items-center mt-16 flex-wrap gap-2">
         {/* <button
