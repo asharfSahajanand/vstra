@@ -1,3 +1,5 @@
+ 
+ import loadGPTScript from "./loadGPTScript";
  export const showInterstitialAd = (onAfter) => {
   loadGPTScript();
   window.googletag = window.googletag || { cmd: [] };
